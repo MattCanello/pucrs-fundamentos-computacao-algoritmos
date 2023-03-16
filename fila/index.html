@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fila</title>
+
+    <style>
+        input, button, select {
+            display: block;
+            margin: 2px;
+        }
+
+        input, select {
+            width: 90%;
+        }
+
+        button {
+            width: 125px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return addItem();">
+        <input autofocus type="text" id="inputNovoItem" autocomplete="off" />
+        <button>+</button>
+    </form>
+
+    <select id="selectItems" multiple="true" disabled></select>
+    <button type="button" onclick="queue.remove()">-</button>
+
+    <button type="button" onclick="queue.clear()">Clear</button>
+
+    <script src="fila.js"></script>
+    <script>
+        var queue = new OptionQueue(selectItems);
+
+        function addItem() {
+            let newItem = inputNovoItem.value;
+            
+            if (newItem == '') {
+                alert('Favor preencher alguma informação.');
+                inputNovoItem.focus();
+                return false;
+            }
+
+            queue.add(newItem);
+            inputNovoItem.value = '';
+            inputNovoItem.focus();
+            return false;
+        }
+    </script>
+</body>
+</html>
