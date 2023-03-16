@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fila</title>
+    <title>Pilha</title>
 
     <link rel="stylesheet" href="../layout.css" />
 </head>
 <body>
-    <h1>Fila</h1>
+    <h1>Pilha</h1>
     <p>
-        Este formulário simula o comportamento de uma fila (<em>queue</em>), 
-        onde novos itens são acrescentados ao final e o primeiro item é sempre o item a ser removido.
+        Este formulário simula o comportamento de uma pilha (<em>stack</em>), 
+        onde novos itens são acrescentados no início e o primeiro item é sempre o item a ser removido.
     </p>
 
     <form onsubmit="return addItem();">
@@ -21,13 +21,13 @@
     </form>
 
     <select id="selectItems" multiple="true" disabled></select>
-    <button type="button" onclick="queue.dequeue()">-</button>
+    <button type="button" onclick="stack.pop()">-</button>
 
-    <button type="button" onclick="queue.clear()">Clear</button>
+    <button type="button" onclick="stack.clear()">Clear</button>
 
-    <script src="fila.js"></script>
+    <script src="pilha.js"></script>
     <script>
-        var queue = new OptionQueue(selectItems);
+        var stack = new OptionStack(selectItems);
 
         function addItem() {
             let newItem = inputNewItem.value;
@@ -38,7 +38,7 @@
                 return false;
             }
 
-            queue.enqueue(newItem);
+            stack.push(newItem);
             inputNewItem.value = '';
             inputNewItem.focus();
             return false;

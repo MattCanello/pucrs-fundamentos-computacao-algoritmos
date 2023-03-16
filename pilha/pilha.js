@@ -1,4 +1,4 @@
-class OptionQueue {
+class OptionStack {
     constructor(selectElement) {
         this.container = selectElement;
         this.items = [];
@@ -6,24 +6,24 @@ class OptionQueue {
         this.currentValue = -1;
     }
 
-    enqueue = function(text) {
+    push = function(text) {
         let option = document.createElement('option');
         option.text = text;
         option.value = this.currentValue = this.currentValue + 1;
 
         this.items.push(option);
-        this.container.add(option);
+        this.container.insertBefore(option, this.current);
 
         if (this.current != null) {
-            return option;
+            this.current.selected = false;
         }
-        
+
         this.current = option;
         option.selected = true;
         return option;
     }
 
-    dequeue = function() {
+    pop = function() {
         if (this.current == null) {
             return false;
         }
@@ -32,14 +32,14 @@ class OptionQueue {
         this.container.remove(this.current);
         this.current = null;
 
-        this.items.shift();
+        this.items.pop();
 
         if (this.items.length > 0) {
-            this.current = this.items[0];
+            this.current = this.items[this.items.length - 1];
             this.current.selected = true;
         }
 
-        return true;
+        return this;
     }
 
     getCurrent = function() {
@@ -64,7 +64,7 @@ class OptionQueue {
 
     clear = function() {
         while (this.current != null) {
-            this.dequeue();
+            this.pop();
         }
     }
 }

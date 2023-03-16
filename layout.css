@@ -1,0 +1,31 @@
+body {
+    background-color: #111;
+    color: #eee;
+}
+
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    text-align: justify;
+    hyphens: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+input, button, select {
+    display: block;
+    margin: 2px;
+}
+
+input, select {
+    width: 90%;
+}
+
+button {
+    width: 125px;
+}
