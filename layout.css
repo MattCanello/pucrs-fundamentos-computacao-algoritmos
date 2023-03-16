@@ -1,6 +1,6 @@
 body {
-    background-color: #111;
-    color: #eee;
+    background-color: #1E1E1E;
+    color: #D4D4D4;
 }
 
 * {
@@ -13,19 +13,39 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: white;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #474747;
 }
 
-input, button, select {
-    display: block;
-    margin: 2px;
-}
-
-input, select {
-    width: 90%;
+a {
+    color: #3794FF
 }
 
 button {
-    width: 125px;
+    min-width: 25px;
+    margin: 2px;
+}
+
+select {
+    overflow: auto;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #474747;
+    border-radius: 5px;
+}
+
+fieldset select {
+    width: 100%;
+}
+
+form > fieldset > input {
+    flex-grow: 1;
+}
+
+select:disabled {
+    background-color: transparent;
+    border: 0 none;
+    min-height: 40vh;
 }

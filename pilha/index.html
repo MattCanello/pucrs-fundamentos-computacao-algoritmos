@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,16 +16,26 @@
     </p>
 
     <form onsubmit="return addItem();">
-        <input autofocus type="text" id="inputNewItem" autocomplete="off" />
-        <button>+</button>
+        <fieldset>
+            <legend>Novo item</legend>
+            <input autofocus type="text" id="inputNewItem" autocomplete="off" />
+            <button>+</button>
+        </fieldset>
     </form>
 
-    <select id="selectItems" multiple="true" disabled></select>
-    <button type="button" onclick="stack.pop()">-</button>
-
-    <button type="button" onclick="stack.clear()">Clear</button>
+    <fieldset>
+        <legend>Itens</legend>
+        <select id="selectItems" multiple="true" disabled></select>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Ações</legend>
+        <button type="button" onclick="stack.pop()">-</button>
+        <button type="button" onclick="stack.clear()">Limpar</button>
+    </fieldset>
 
     <script src="pilha.js"></script>
+
     <script>
         var stack = new OptionStack(selectItems);
 
