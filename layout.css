@@ -42,6 +42,7 @@ fieldset select {
 
 form > fieldset > input {
     flex-grow: 1;
+    margin-right: 10px;
 }
 
 select {

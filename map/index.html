@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map / Mapas</title>
+
+    <link rel="stylesheet" href="../layout.css" />
+</head>
+<body>
+    <h1>Map / Mapas</h1>
+    <p>
+        Coleção do tipo chave-valor onde a mesma chave não se repete.
+    </p>
+
+    <form onsubmit="return addItem();">
+        <fieldset>
+            <legend>Novo item</legend>
+            <input autofocus type="text" id="inputNewKey" autocomplete="off" placeholder="Chave" />
+            <input type="text" id="inputNewValue" autocomplete="off" placeholder="Valor" />
+            <button>+</button>
+        </fieldset>
+    </form>
+
+    <fieldset>
+        <legend>Itens</legend>
+        <select id="selectItems" multiple="true"></select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Ações</legend>
+        <button type="button" onclick="map.remove()">-</button>
+        <button type="button" onclick="map.clear()">Limpar</button>
+    </fieldset>
+
+    <script src="map.js"></script>
+
+    <script>
+        var map = new OptionMap(selectItems);
+
+        function addItem() {
+            let newKey = inputNewKey.value;
+            
+            if (newKey == '') {
+                alert('Favor preencher alguma informação.');
+                inputNewKey.focus();
+                return false;
+            }
+
+            map.add(newKey, inputNewValue.value);
+            inputNewKey.value = inputNewValue.value = '';
+            inputNewKey.focus();
+            return false;
+        }
+    </script>
+</body>
+</html>
