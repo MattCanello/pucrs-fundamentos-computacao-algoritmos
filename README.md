@@ -17,3 +17,15 @@ Estrutura de dados onde novos itens são adicionados ao final e o primeiro item 
 Estrutura de dados onde novos itens são adicionados ao início e o item no topo da fila é sempre o item a ser removido.
 
 [Conteúdo iterativo](https://mattcanello.github.io/pucrs-fundamentos-computacao-algoritmos/pilha/).
+
+### Conjuntos (Set)
+
+Coleção onde o mesmo item não se repete.
+
+[Conteúdo iterativo](https://mattcanello.github.io/pucrs-fundamentos-computacao-algoritmos/set/).
+
+### Mapas (Map)
+
+Coleção do tipo chave-valor onde a mesma chave não se repete.
+
+[Conteúdo iterativo](https://mattcanello.github.io/pucrs-fundamentos-computacao-algoritmos/map/).
