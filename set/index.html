@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set / Conjunto</title>
+
+    <link rel="stylesheet" href="../layout.css" />
+</head>
+<body>
+    <h1>Set / Conjunto</h1>
+    <p>
+        Coleção onde o mesmo item não se repete.
+    </p>
+
+    <form onsubmit="return addItem();">
+        <fieldset>
+            <legend>Novo item</legend>
+            <input autofocus type="text" id="inputNewItem" autocomplete="off" />
+            <button>+</button>
+        </fieldset>
+    </form>
+
+    <fieldset>
+        <legend>Itens</legend>
+        <select id="selectItems" multiple="true"></select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Ações</legend>
+        <button type="button" onclick="set.remove()">-</button>
+        <button type="button" onclick="set.clear()">Limpar</button>
+    </fieldset>
+
+    <script src="set.js"></script>
+
+    <script>
+        var set = new OptionSet(selectItems);
+
+        function addItem() {
+            let newItem = inputNewItem.value;
+            
+            if (newItem == '') {
+                alert('Favor preencher alguma informação.');
+                inputNewItem.focus();
+                return false;
+            }
+
+            set.add(newItem);
+            inputNewItem.value = '';
+            inputNewItem.focus();
+            return false;
+        }
+    </script>
+</body>
+</html>

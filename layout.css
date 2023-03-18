@@ -44,6 +44,16 @@ form > fieldset > input {
     flex-grow: 1;
 }
 
+select {
+    background-color: transparent;
+    border: 0 none;
+    min-height: 40vh;
+}
+
+select:not(:disabled) > option {
+    color: #D4D4D4;
+}
+
 select:disabled {
     background-color: transparent;
     border: 0 none;
